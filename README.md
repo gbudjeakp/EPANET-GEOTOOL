@@ -1,34 +1,211 @@
-OWA-EPANET
-======
+# EPANET-GEOTOOL
 
-## Build Status
-[![Build status](https://ci.appveyor.com/api/projects/status/19wpg4g2cmj3oihl?svg=true)](https://ci.appveyor.com/project/OpenWaterAnalytics/epanet)
-[![linux](https://github.com/OpenWaterAnalytics/EPANET/actions/workflows/ccpp.yml/badge.svg)](https://github.com/OpenWaterAnalytics/EPANET/actions/workflows/ccpp.yml)
-[![macos](https://github.com/OpenWaterAnalytics/EPANET/actions/workflows/macos.yml/badge.svg)](https://github.com/OpenWaterAnalytics/EPANET/actions/workflows/macos.yml)
-[![epanet2-win32](https://github.com/OpenWaterAnalytics/EPANET/actions/workflows/win32.yml/badge.svg)](https://github.com/OpenWaterAnalytics/EPANET/actions/workflows/win32.yml)
-[![epanet2-win64](https://github.com/OpenWaterAnalytics/EPANET/actions/workflows/win64.yml/badge.svg)](https://github.com/OpenWaterAnalytics/EPANET/actions/workflows/win64.yml)
+**A geospatial extension for EPANET water distribution network modeling.**
 
-## DESCRIPTION
+EPANET-GEOTOOL extends the [EPANET](https://github.com/OpenWaterAnalytics/EPANET) hydraulic modeling engine with full GIS capabilities, including a QGIS plugin for visual network editing and analysis.
 
-**EPANET** is an industry-standard program for modeling the hydraulic and water quality behavior of water distribution system pipe networks. The EPANET Programmer's Toolkit is a library of functions (or API) written in C that allow programmers to customize the use of EPANET's solution engine for their own applications. Both EPANET and its toolkit were originally developed by the U.S. Environmental Protection Agency (USEPA). If you are interested in using/extending the EPANET engine and its API for academic, personal, or commercial use, then you've come to the right place. [Read more about EPANET on Wikipedia](https://en.wikipedia.org/wiki/EPANET). (Please note that this project covers only the EPANET hydraulic and water quality solver engine, not the graphical user interface.)
+[![License](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
 
-## INSTALLATION
+---
 
-Instructions for building the OWA-EPANET Toolkit's function library as well as its command line executable from the source files in this repository can be found [here](https://github.com/OpenWaterAnalytics/EPANET/blob/master/BUILDING.md).
+## 🌟 Features
 
-## USAGE
+### epanet-geo Library (C)
+- **Coordinate Reference System (CRS) support** - Work with real-world coordinates (EPSG codes)
+- **Coordinate transformations** - Convert between projections using PROJ
+- **DEM integration** - Assign node elevations from terrain rasters (GeoTIFF, ASCII Grid)
+- **GIS import/export** - Read/write Shapefiles, GeoJSON, GeoPackage via GDAL
+- **Spatial indexing** - Fast spatial queries for large networks
+- **Automatic pipe length calculation** - From geographic coordinates
 
-See the [full documentation](http://wateranalytics.org/EPANET/) of the OWA-EPANET API, along with examples of how to use the toolkit for water distribution system analysis. Additional information may be found on this project's [Wiki](https://github.com/OpenWaterAnalytics/EPANET/wiki).
+### QGIS Plugin
+- **Visual network editing** - Create and modify networks directly on the map
+- **One-click simulation** - Run EPANET from within QGIS
+- **Result visualization** - Automatic pressure/flow symbology
+- **Import from GIS** - Convert existing infrastructure data to EPANET
+- **Export to GIS** - Share results with other GIS software
+- **DEM elevation assignment** - Extract elevations from terrain data
 
-## CONTRIBUTING
+---
 
-Everyone is welcome to participate in this project. Whether you are helping others to resolve issues, reporting a new issue that hasn't yet been discovered, suggesting a new feature that would benefit your workflow, or writing code (or tests, or scripts, or ...), we value your time and effort. The path for contribution starts with the [Issues](https://github.com/OpenWaterAnalytics/EPANET/issues). Look around at open Issues and the conversation around them, get engaged by commenting on an outstanding Issue or creating a new one. If you want to contribute code, it helps to give the community time to discuss the ideas you present and offer constructive feedback. Once you get a clear path forward, Fork this repo to your own account. Make your commits on your dev branch (or one based on dev). Once you are finished, you can open a Pull Request to test the code and discuss merging your changes back into the community repository. A [step-by-step tutorial](http://www.slideshare.net/demetriseliades/contributing-to-epanet-using-github-in-windows) on how to contribute to OWA-EPANET using GitHub is also available.
+## 🚀 Quick Start
 
-## CREDITS
+### One-Click Setup (macOS/Linux)
 
-The **Open Water Analytics** (OWA) Community is an international group of EPANET developers and users, whose objective is to provide group interaction and coordinated development of the EPANET codebase, to ensure that important new user interface and algorithmic features are identified and that these features progress efficiently from prototype code to production implementations. OWA is actively maintaining OWA-EPANET, a community-supported branch of USEPA EPANET, since May 2014. The full list of individuals contributing to this project can be found [here](https://github.com/OpenWaterAnalytics/EPANET/blob/dev/AUTHORS).
+```bash
+git clone https://github.com/gbudjeakp/EPANET-GEOTOOL.git
+cd EPANET-GEOTOOL/qgis_plugin
+./setup.sh
+```
 
-## DISCLAIMER
-Although OWA is not formally affiliated with nor endorsed by USEPA, this project has been a collaborative effort between the two that builds upon and extends the USEPA’s legacy EPANET 2.0 code base. For the last "official" release of EPANET please go to the [USEPA website](https://www.epa.gov/water-research/epanet).
+This will:
+1. Build the EPANET and epanet-geo libraries
+2. Install the QGIS plugin
+3. Generate test data (DEM, sample networks)
 
-For more general community discussion of the project, please go to [OWA Discussions](https://github.com/orgs/OpenWaterAnalytics/discussions).
+### Manual Build
+
+```bash
+mkdir build && cd build
+cmake -DBUILD_GEO=ON ..
+cmake --build .
+```
+
+---
+
+## 📦 Components
+
+```
+EPANET-GEOTOOL/
+├── src/                    # Core EPANET source
+│   └── geo/                # ⭐ epanet-geo library (NEW)
+│       ├── include/        # Public API headers
+│       └── src/            # Implementation
+├── qgis_plugin/            # ⭐ QGIS Plugin (NEW)
+│   ├── epanet_bindings.py  # Python bindings
+│   ├── epanet_geo_plugin.py
+│   ├── dialogs.py
+│   └── test_data/          # Sample DEM and GeoJSON
+├── include/                # EPANET public headers
+└── example-networks/       # Sample .inp files
+```
+
+---
+
+## 🔧 Requirements
+
+### For Building
+- CMake 3.10+
+- C compiler (GCC, Clang, MSVC)
+- GDAL (for GIS support)
+- PROJ (for coordinate transformations)
+
+### For QGIS Plugin
+- QGIS 3.22+ or 4.x
+- Python 3.8+
+
+### Install Dependencies
+
+**macOS (Homebrew):**
+```bash
+brew install cmake gdal proj
+```
+
+**Ubuntu/Debian:**
+```bash
+sudo apt install cmake libgdal-dev libproj-dev
+```
+
+**Windows:**
+Use OSGeo4W or vcpkg to install GDAL and PROJ.
+
+---
+
+## 📖 Usage
+
+### QGIS Plugin
+
+1. **Open QGIS** and enable the plugin (Plugins → Manage and Install Plugins)
+2. **Open an INP file** or create a new project
+3. **Import GIS data** - Load existing shapefiles/GeoJSON
+4. **Assign elevations** - Use DEM terrain data
+5. **Run simulation** - One-click hydraulic analysis
+6. **View results** - Pressure and flow displayed on the map
+
+### epanet-geo Library (C API)
+
+```c
+#include "epanet2_2.h"
+#include "epanet_geo.h"
+
+// Create EPANET project
+EN_Project ph;
+EN_createproject(&ph);
+EN_open(ph, "network.inp", "report.rpt", "");
+
+// Create geo context and attach
+ENGEO_Handle gh;
+ENGEO_create(&gh);
+ENGEO_attach(gh, ph);
+
+// Set coordinate system
+ENGEO_setcrs_epsg(gh, 32614);  // UTM Zone 14N
+
+// Assign elevations from DEM
+ENGEO_open_dem(gh, "terrain.tif");
+ENGEO_assign_elevations(gh, ENGEO_INTERP_BILINEAR);
+ENGEO_close_dem(gh);
+
+// Run simulation
+EN_openH(ph);
+EN_initH(ph, EN_NOSAVE);
+EN_runH(ph, &t);
+EN_closeH(ph);
+
+// Export to GeoJSON
+ENGEO_export_geojson(gh, "output.geojson", ENGEO_EXPORT_ALL);
+
+// Cleanup
+ENGEO_destroy(&gh);
+EN_close(ph);
+EN_deleteproject(ph);
+```
+
+---
+
+## 🆚 Comparison with Commercial Tools
+
+| Feature | InfoWater Pro | WaterGEMS | EPANET-GEOTOOL |
+|---------|--------------|-----------|----------------|
+| **Cost** | $5,000+/year | $3,000+/year | **Free** |
+| **GIS Integration** | ArcGIS only | Limited | **QGIS (free)** |
+| **Platform** | Windows | Windows | **All platforms** |
+| **Open Source** | No | No | **Yes (MIT)** |
+| **DEM Support** | Yes | Yes | **Yes** |
+| **CRS Support** | Via ArcGIS | Limited | **Full PROJ** |
+
+---
+
+## 🤝 Contributing
+
+Contributions are welcome! Please see [CONTRIBUTING.md](CONTRIBUTING.md) for guidelines.
+
+### Development Setup
+
+```bash
+# Clone with submodules
+git clone --recursive https://github.com/gbudjeakp/EPANET-GEOTOOL.git
+
+# Build in debug mode
+mkdir build && cd build
+cmake -DCMAKE_BUILD_TYPE=Debug -DBUILD_GEO=ON -DBUILD_TESTS=ON ..
+cmake --build .
+
+# Run tests
+ctest
+```
+
+---
+
+## 📄 License
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+
+EPANET is developed by the US Environmental Protection Agency.
+
+---
+
+## 🙏 Acknowledgments
+
+- [OpenWaterAnalytics/EPANET](https://github.com/OpenWaterAnalytics/EPANET) - The original EPANET project
+- [US EPA](https://www.epa.gov/water-research/epanet) - EPANET development
+- [QGIS](https://qgis.org) - Free and open source GIS
+- [GDAL](https://gdal.org) - Geospatial Data Abstraction Library
+- [PROJ](https://proj.org) - Coordinate transformation library
+
+---
+
+## 📬 Contact
+
+- **Issues:** [GitHub Issues](https://github.com/gbudjeakp/EPANET-GEOTOOL/issues)
+- **Author:** [@gbudjeakp](https://github.com/gbudjeakp)

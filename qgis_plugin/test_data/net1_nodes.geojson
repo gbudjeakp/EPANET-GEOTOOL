@@ -1,0 +1,182 @@
+{
+  "type": "FeatureCollection",
+  "name": "Net1_Nodes",
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "10",
+        "elevation": 710,
+        "demand": 0,
+        "node_type": "junction"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          20,
+          70
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "11",
+        "elevation": 710,
+        "demand": 150,
+        "node_type": "junction"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          30,
+          70
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "12",
+        "elevation": 700,
+        "demand": 150,
+        "node_type": "junction"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          50,
+          70
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "13",
+        "elevation": 695,
+        "demand": 100,
+        "node_type": "junction"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          70,
+          70
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "21",
+        "elevation": 700,
+        "demand": 150,
+        "node_type": "junction"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          30,
+          40
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "22",
+        "elevation": 695,
+        "demand": 200,
+        "node_type": "junction"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          50,
+          40
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "23",
+        "elevation": 690,
+        "demand": 150,
+        "node_type": "junction"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          70,
+          40
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "31",
+        "elevation": 700,
+        "demand": 100,
+        "node_type": "junction"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          30,
+          10
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "32",
+        "elevation": 710,
+        "demand": 100,
+        "node_type": "junction"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          50,
+          10
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "9",
+        "elevation": 800,
+        "demand": 0,
+        "node_type": "reservoir"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          10,
+          70
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "2",
+        "elevation": 850,
+        "demand": 0,
+        "node_type": "tank"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          50,
+          90
+        ]
+      }
+    }
+  ]
+}

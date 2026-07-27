@@ -1,0 +1,18 @@
+[general]
+name=EPANET GeoTools
+qgisMinimumVersion=3.22
+qgisMaximumVersion=4.99
+description=Geospatial modeling for EPANET water distribution networks
+version=0.1.0
+author=OWA EPANET Contributors
+email=epanet@epa.gov
+about=Full GIS integration for EPANET hydraulic modeling. Import/export Shapefiles and GeoJSON. Assign elevations from DEM. Run simulations and visualize results.
+tracker=https://github.com/OpenWaterAnalytics/EPANET/issues
+repository=https://github.com/OpenWaterAnalytics/EPANET
+changelog=0.1.0 Initial release
+tags=water,hydraulics,network,epanet,simulation
+homepage=https://github.com/OpenWaterAnalytics/EPANET
+category=Analysis
+experimental=True
+deprecated=False
+hasProcessingProvider=no

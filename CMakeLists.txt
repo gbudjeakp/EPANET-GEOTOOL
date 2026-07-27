@@ -36,11 +36,16 @@ option(BUILD_SHARED_LIBS "Build using shared libraries" ON)
 option(BUILD_TESTS "Build tests (requires Boost)" OFF)
 #option(BUILD_PY_LIB "Build library for Python wrapper" OFF)
 option(BUILD_COVERAGE "Build library for coverage" OFF)
+option(BUILD_GEO "Build geospatial library (requires GDAL, PROJ)" OFF)
 
 #IF (NOT BUILD_PY_LIB)
   add_subdirectory(run)
 #ENDIF (NOT BUILD_PY_LIB)
 add_subdirectory(src/outfile)
+
+IF (BUILD_GEO)
+  add_subdirectory(src/geo)
+ENDIF (BUILD_GEO)
 
 IF (BUILD_TESTS)
     #Prep ourselves for compiling with boost

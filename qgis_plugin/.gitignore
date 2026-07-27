@@ -1,0 +1,25 @@
+# EPANET GeoTools - Build artifacts and local files
+
+# Compiled libraries (built locally)
+*.dylib
+*.so
+*.dll
+*.a
+*.lib
+
+# Python cache
+__pycache__/
+*.pyc
+*.pyo
+
+# QGIS project files (user-specific)
+*.qgz
+*.qgs~
+
+# IDE
+.vscode/
+.idea/
+
+# macOS
+.DS_Store
+*.aux.xml

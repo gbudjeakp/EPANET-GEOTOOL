@@ -1,0 +1,9 @@
+<!DOCTYPE qgis PUBLIC 'http://mrcc.com/qgis.dtd' 'SYSTEM'>
+<qgis version="3.0" projectname="EPANET Net1 Test">
+  <title>EPANET Net1 Test Project</title>
+  <layer-tree-group>
+    <layer-tree-layer id="dem" name="DEM" source="net1_dem.asc"/>
+    <layer-tree-layer id="pipes" name="Pipes" source="net1_pipes.geojson"/>
+    <layer-tree-layer id="nodes" name="Nodes" source="net1_nodes.geojson"/>
+  </layer-tree-group>
+</qgis>

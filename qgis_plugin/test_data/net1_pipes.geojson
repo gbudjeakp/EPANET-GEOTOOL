@@ -1,0 +1,294 @@
+{
+  "type": "FeatureCollection",
+  "name": "Net1_Pipes",
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "10",
+        "length": 10530,
+        "diameter": 18,
+        "roughness": 100,
+        "node1": "10",
+        "node2": "11"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            20,
+            70
+          ],
+          [
+            30,
+            70
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "11",
+        "length": 5280,
+        "diameter": 14,
+        "roughness": 100,
+        "node1": "11",
+        "node2": "12"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            30,
+            70
+          ],
+          [
+            50,
+            70
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "12",
+        "length": 5280,
+        "diameter": 10,
+        "roughness": 100,
+        "node1": "12",
+        "node2": "13"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            50,
+            70
+          ],
+          [
+            70,
+            70
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "21",
+        "length": 5280,
+        "diameter": 10,
+        "roughness": 100,
+        "node1": "21",
+        "node2": "22"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            30,
+            40
+          ],
+          [
+            50,
+            40
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "22",
+        "length": 5280,
+        "diameter": 12,
+        "roughness": 100,
+        "node1": "22",
+        "node2": "23"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            50,
+            40
+          ],
+          [
+            70,
+            40
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "31",
+        "length": 5280,
+        "diameter": 6,
+        "roughness": 100,
+        "node1": "31",
+        "node2": "32"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            30,
+            10
+          ],
+          [
+            50,
+            10
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "110",
+        "length": 200,
+        "diameter": 18,
+        "roughness": 100,
+        "node1": "2",
+        "node2": "12"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            50,
+            90
+          ],
+          [
+            50,
+            70
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "111",
+        "length": 5280,
+        "diameter": 10,
+        "roughness": 100,
+        "node1": "11",
+        "node2": "21"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            30,
+            70
+          ],
+          [
+            30,
+            40
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "112",
+        "length": 5280,
+        "diameter": 12,
+        "roughness": 100,
+        "node1": "12",
+        "node2": "22"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            50,
+            70
+          ],
+          [
+            50,
+            40
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "113",
+        "length": 5280,
+        "diameter": 8,
+        "roughness": 100,
+        "node1": "13",
+        "node2": "23"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            70,
+            70
+          ],
+          [
+            70,
+            40
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "121",
+        "length": 5280,
+        "diameter": 8,
+        "roughness": 100,
+        "node1": "21",
+        "node2": "31"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            30,
+            40
+          ],
+          [
+            30,
+            10
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "122",
+        "length": 5280,
+        "diameter": 6,
+        "roughness": 100,
+        "node1": "22",
+        "node2": "32"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            50,
+            40
+          ],
+          [
+            50,
+            10
+          ]
+        ]
+      }
+    }
+  ]
+}
